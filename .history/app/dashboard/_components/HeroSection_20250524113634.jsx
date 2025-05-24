@@ -6,9 +6,8 @@ import Image from 'next/image'
 export default function HeroSection() {
   const [imageError, setImageError] = useState(false);
 
-  // Primary and fallback image URLs
-  const primaryImage = "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1920&auto=format&fit=crop";
-  const fallbackImage = "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920&auto=format&fit=crop";
+  // Fallback image URL if the main image fails to load
+  const fallbackImage = "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1920&auto=format&fit=crop";
   
   return (
     <div className="bg-white min-h-screen flex items-center">
@@ -36,7 +35,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <h1 className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-400 sm:text-6xl mb-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl mb-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 Your AI-Powered Interview Coach
               </h1>
               <p className="text-lg leading-8 text-gray-600 mb-8 animate-slide-up" style={{ animationDelay: '0.3s' }}>
@@ -60,15 +59,15 @@ export default function HeroSection() {
             <div className="relative animate-slide-up overflow-hidden rounded-xl shadow-2xl" style={{ animationDelay: '0.5s' }}>
               <div className="aspect-[4/3] relative">
                 <Image
-                  src={imageError ? fallbackImage : primaryImage}
-                  alt="Professional conducting an interview"
+                  src={imageError ? fallbackImage : '/images/hero-interview.webp'}
+                  alt="AI Interview Platform"
                   fill
                   priority
                   className="object-cover hover:scale-105 transition-transform duration-700"
                   onError={() => setImageError(true)}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 via-purple-500/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full blur-xl opacity-50" />

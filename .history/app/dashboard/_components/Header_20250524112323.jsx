@@ -66,13 +66,13 @@ function Header() {
           bg-white/90 backdrop-blur-md 
           shadow-md z-50 
           transition-all duration-500 ease-in-out
-          ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
+          ${isVisible ? "translate-y-0" : "-translate-y-full"}
         `}
       >
         {/* Logo */}
         <Link 
           href="/" 
-          className="flex items-center gap-3 hover-grow"
+          className="flex items-center gap-3 hover-scale"
           aria-label="IntelliView AI Home"
           onClick={closeMobileMenu}
         >
@@ -81,12 +81,10 @@ function Header() {
             alt="IntelliView AI Logo" 
             width={48} 
             height={48} 
-            className="object-contain"
+            className="object-contain animate-float"
             priority
           />
-          <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent hover:from-indigo-500 hover:to-indigo-300 transition-all duration-300">
-            IntelliView AI
-          </span>
+          <span className="text-xl sm:text-2xl font-bold text-indigo-600 smooth-transition hover:text-indigo-700">IntelliView AI</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -101,7 +99,7 @@ function Header() {
               href={item.href}
               label={item.label}
               onClick={closeMobileMenu}
-              className="animate-slide-up"
+              className="animate-slide-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             />
           ))}
@@ -111,32 +109,29 @@ function Header() {
         <div className="md:hidden">
           <button
             onClick={toggleMobileMenu}
-            className="focus:outline-none text-gray-600 hover:text-indigo-600 p-2 rounded-lg hover:bg-indigo-50 smooth-transform"
+            className="focus:outline-none text-gray-600 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-indigo-50 smooth-transition"
             aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
             aria-expanded={isMobileMenuOpen}
           >
-            {isMobileMenuOpen ? <X size={24} className="animate-scale-in" /> : <Menu size={24} className="animate-scale-in" />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Desktop Authentication */}
-        <div className="hidden md:block animate-fade-in">
+        <div className="hidden md:block">
           <SignedOut>
             <SignInButton mode="modal">
               <button 
                 className="
                   px-4 py-2 
-                  bg-gradient-to-r from-indigo-600 to-indigo-500
-                  text-white 
+                  bg-indigo-600 text-white 
                   rounded-md 
-                  hover:from-indigo-500 hover:to-indigo-400
-                  transition-all duration-300
-                  transform hover:scale-105
+                  hover:bg-indigo-700 
+                  transition-colors
                   focus:outline-none 
                   focus:ring-2 
                   focus:ring-indigo-500 
                   focus:ring-offset-2
-                  shadow-md hover:shadow-lg
                 "
               >
                 Sign In
@@ -148,7 +143,7 @@ function Header() {
               afterSignOutUrl="/" 
               appearance={{
                 elements: {
-                  userButtonAvatarBox: "w-10 h-10 hover:scale-110 transition-transform duration-300",
+                  userButtonAvatarBox: "w-10 h-10",
                 },
               }} 
             />
@@ -161,10 +156,9 @@ function Header() {
         <div 
           className="
             fixed inset-0 top-0 
-            bg-white/95 backdrop-blur-md z-40 md:hidden 
+            bg-white z-40 md:hidden 
             overflow-hidden
             pt-16
-            animate-fade-in
           "
           role="dialog"
           aria-modal="true"
@@ -172,7 +166,7 @@ function Header() {
         >
           <div className="h-full overflow-y-auto pb-16">
             <nav className="space-y-6 p-6">
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <NavItem
                   key={item.href}
                   path={path}
@@ -180,29 +174,24 @@ function Header() {
                   label={item.label}
                   mobile
                   onClick={closeMobileMenu}
-                  className="animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
                 />
               ))}
 
               {/* Mobile Authentication */}
-              <div className="pt-6 border-t animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <div className="pt-6 border-t">
                 <SignedOut>
                   <SignInButton mode="modal">
                     <button 
                       className="
                         w-full px-4 py-2 
-                        bg-gradient-to-r from-indigo-600 to-indigo-500
-                        text-white 
+                        bg-indigo-600 text-white 
                         rounded-md 
-                        hover:from-indigo-500 hover:to-indigo-400
-                        transition-all duration-300
-                        transform hover:scale-105
+                        hover:bg-indigo-700 
+                        transition-colors
                         focus:outline-none 
                         focus:ring-2 
                         focus:ring-indigo-500 
                         focus:ring-offset-2
-                        shadow-md hover:shadow-lg
                       "
                       onClick={closeMobileMenu}
                     >
@@ -216,7 +205,7 @@ function Header() {
                       afterSignOutUrl="/" 
                       appearance={{
                         elements: {
-                          userButtonAvatarBox: "w-12 h-12 mx-auto hover:scale-110 transition-transform duration-300",
+                          userButtonAvatarBox: "w-12 h-12 mx-auto",
                         },
                       }} 
                     />
