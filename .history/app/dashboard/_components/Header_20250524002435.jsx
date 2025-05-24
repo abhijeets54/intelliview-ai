@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Bot } from "lucide-react";
-import Image from "next/image";
 
 function Header() {
   const path = usePathname();
@@ -72,19 +71,14 @@ function Header() {
         {/* Logo */}
         <Link 
           href="/" 
-          className="flex items-center gap-3"
+          className="flex items-center gap-2 transition-transform duration-300 hover:scale-105"
           aria-label="IntelliView AI Home"
           onClick={closeMobileMenu}
         >
-          <Image 
-            src="/logo.webp" 
-            alt="IntelliView AI Logo" 
-            width={48} 
-            height={48} 
-            className="object-contain"
-            priority
-          />
-          <span className="text-xl sm:text-2xl font-bold text-indigo-600">IntelliView AI</span>
+          <Bot className="text-indigo-600 animate-pulse" size={28} />
+          <span className="text-xl sm:text-2xl font-bold text-indigo-600 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            IntelliView AI
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -99,6 +93,7 @@ function Header() {
               href={item.href}
               label={item.label}
               onClick={closeMobileMenu}
+              className="transition-all duration-300 hover:text-indigo-600 hover:scale-105"
             />
           ))}
         </nav>
@@ -107,7 +102,7 @@ function Header() {
         <div className="md:hidden">
           <button
             onClick={toggleMobileMenu}
-            className="focus:outline-none text-gray-600 hover:text-indigo-600 transition-colors"
+            className="focus:outline-none text-gray-600 hover:text-indigo-600 transition-colors duration-300"
             aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
             aria-expanded={isMobileMenuOpen}
           >

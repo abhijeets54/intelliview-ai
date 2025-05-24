@@ -15,7 +15,6 @@ const AboutUsPage = () => {
   const tabContent = {
     mission: {
       icon: <Target className="mr-2 text-indigo-600" />,
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       content: (
         <div className="space-y-4">
           <p className="text-base md:text-lg">IntelliView AI is on a mission to revolutionize interview preparation by providing personalized, intelligent AI coaching tailored to individual career aspirations.</p>
@@ -25,7 +24,6 @@ const AboutUsPage = () => {
     },
     story: {
       icon: <BookOpen className="mr-2 text-indigo-600" />,
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       content: (
         <div className="space-y-4">
           <h3 className="text-xl md:text-2xl font-semibold">Our Story</h3>
@@ -35,7 +33,6 @@ const AboutUsPage = () => {
     },
     approach: {
       icon: <Rocket className="mr-2 text-indigo-600" />,
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       content: (
         <div className="space-y-4">
           <h3 className="text-xl md:text-2xl font-semibold">How It Works</h3>
@@ -49,20 +46,17 @@ const AboutUsPage = () => {
     {
       icon: <Award className="w-12 h-12 text-indigo-600 mb-4" />,
       title: "Continuous Learning",
-      description: "Always striving to improve and provide better tools for growth.",
-      image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      description: "Always striving to improve and provide better tools for growth."
     },
     {
       icon: <Users className="w-12 h-12 text-indigo-600 mb-4" />,
       title: "Empowerment",
-      description: "Supporting individuals in building confidence and achieving professional success.",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      description: "Supporting individuals in building confidence and achieving professional success."
     },
     {
       icon: <Briefcase className="w-12 h-12 text-indigo-600 mb-4" />,
       title: "Excellence",
-      description: "Delivering high-quality, impactful features to simplify interview preparation.",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      description: "Delivering high-quality, impactful features to simplify interview preparation."
     }
   ]
 
@@ -70,24 +64,13 @@ const AboutUsPage = () => {
     <div className="min-h-screen bg-gray-50 py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 relative">
-          <div className="relative h-[400px] rounded-xl overflow-hidden mb-8">
-            <img
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"
-              alt="About IntelliView AI"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 flex items-center justify-center">
-              <div className="text-white">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">
-                  About IntelliView AI
-                </h1>
-                <p className="mt-4 max-w-xl mx-auto text-base sm:text-lg md:text-xl px-4">
-                  Empowering professionals to ace interviews through intelligent, personalized AI coaching
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900">
+            About IntelliView AI
+          </h1>
+          <p className="mt-4 max-w-xl mx-auto text-base sm:text-lg md:text-xl text-gray-600 px-4">
+            Empowering professionals to ace interviews through intelligent, personalized AI coaching
+          </p>
         </div>
 
         {/* Tabs Section */}
@@ -109,18 +92,8 @@ const AboutUsPage = () => {
               </button>
             ))}
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="relative h-[300px]">
-              <img
-                src={tabContent[activeTab].image}
-                alt={`${activeTab} illustration`}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-white/50 to-transparent" />
-            </div>
-            <div className="p-4 sm:p-6 md:p-8">
-              {tabContent[activeTab].content}
-            </div>
+          <div className="p-4 sm:p-6 md:p-8">
+            {tabContent[activeTab].content}
           </div>
         </div>
 
@@ -133,16 +106,8 @@ const AboutUsPage = () => {
             {coreValues.map((value, index) => (
               <div 
                 key={index} 
-                className="text-center bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+                className="text-center bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="relative h-40 -mx-6 -mt-6 mb-6">
-                  <img
-                    src={value.image}
-                    alt={value.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-gray-50/50 to-transparent" />
-                </div>
                 <div className="flex justify-center">{value.icon}</div>
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
                 <p className="text-base text-gray-600">{value.description}</p>

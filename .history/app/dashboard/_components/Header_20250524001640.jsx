@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Bot } from "lucide-react";
-import Image from "next/image";
 
 function Header() {
   const path = usePathname();
@@ -72,19 +71,12 @@ function Header() {
         {/* Logo */}
         <Link 
           href="/" 
-          className="flex items-center gap-3"
-          aria-label="IntelliView AI Home"
+          className="flex items-center gap-2"
+          aria-label="MockMate AI Home"
           onClick={closeMobileMenu}
         >
-          <Image 
-            src="/logo.webp" 
-            alt="IntelliView AI Logo" 
-            width={48} 
-            height={48} 
-            className="object-contain"
-            priority
-          />
-          <span className="text-xl sm:text-2xl font-bold text-indigo-600">IntelliView AI</span>
+          <Bot className="text-indigo-600" size={28} />
+          <span className="text-xl sm:text-2xl font-bold text-indigo-600">MockMate AI</span>
         </Link>
 
         {/* Desktop Navigation */}

@@ -23,7 +23,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://www.intelliviewai.com'),
+  metadataBase: new URL('https://www.intelliview.ai'),
   title: {
     default: 'IntelliView AI - AI-Powered Interview Preparation',
     template: '%s | IntelliView AI'
@@ -43,7 +43,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://intelliviewai-eta.vercel.app/',
+    url: 'https://intelliview.ai/',
     title: 'IntelliView AI - AI-Powered Interview Preparation',
     description: 'Elevate your interview skills with AI-powered mock interviews. Get personalized coaching, real-time feedback, and boost your confidence.',
     siteName: 'IntelliView AI',

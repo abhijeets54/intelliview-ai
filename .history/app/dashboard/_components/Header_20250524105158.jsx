@@ -72,18 +72,11 @@ function Header() {
         {/* Logo */}
         <Link 
           href="/" 
-          className="flex items-center gap-3"
+          className="flex items-center gap-2"
           aria-label="IntelliView AI Home"
           onClick={closeMobileMenu}
         >
-          <Image 
-            src="/logo.webp" 
-            alt="IntelliView AI Logo" 
-            width={48} 
-            height={48} 
-            className="object-contain"
-            priority
-          />
+          <Image src="/logo.png" alt="Logo" width={40} height={40} />
           <span className="text-xl sm:text-2xl font-bold text-indigo-600">IntelliView AI</span>
         </Link>
 

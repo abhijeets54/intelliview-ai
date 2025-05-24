@@ -54,11 +54,10 @@ export default function HeroSection() {
 
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                 alt="Professional interview preparation"
                 className="object-cover w-full h-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-transparent"></div>
             </div>
           </div>
         </div>

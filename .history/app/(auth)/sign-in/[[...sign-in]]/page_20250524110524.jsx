@@ -38,13 +38,13 @@ export default function Page() {
     <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
       <div className="max-w-xl lg:max-w-3xl">
         <div className="relative -mt-16 block lg:hidden">
-          <a className="inline-flex size-20 items-center justify-center rounded-full bg-white text-blue-600 sm:size-24" href="/">
+          <a className="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 sm:size-20" href="/">
             <span className="sr-only">Home</span>
             <Image 
               src="/logo.webp"
               alt="IntelliView AI Logo"
-              width={96}
-              height={96}
+              width={80}
+              height={80}
               className="object-contain"
               priority
             />

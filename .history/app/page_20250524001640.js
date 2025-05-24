@@ -14,16 +14,8 @@ import {
 import Link from 'next/link'
 import HeroSection from './dashboard/_components/HeroSection'
 
-const ResourceCard = ({ icon, title, description, links, imageUrl }) => (
+const ResourceCard = ({ icon, title, description, links }) => (
   <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 flex flex-col h-full">
-    <div className="relative h-40 mb-6 rounded-lg overflow-hidden">
-      <img
-        src={imageUrl}
-        alt={title}
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-    </div>
     <div className="flex items-center mb-4">
       {icon}
       <h3 className="ml-4 text-xl font-semibold text-gray-900">{title}</h3>
@@ -59,7 +51,6 @@ export default function ResourcesPage() {
           title: "Coding Platforms",
           description: "Practice coding and algorithmic problem-solving",
           icon: <Code className="w-8 h-8 text-indigo-600" />,
-          imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
           links: [
             { name: "GeeksforGeeks", url: "https://www.geeksforgeeks.org/" },
             { name: "LeetCode", url: "https://leetcode.com/" },
@@ -71,7 +62,6 @@ export default function ResourcesPage() {
           title: "Technical Interview Preparation",
           description: "Resources for system design and technical interviews",
           icon: <Target className="w-8 h-8 text-indigo-600" />,
-          imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
           links: [
             { name: "InterviewBit", url: "https://www.interviewbit.com/" },
             { name: "System Design Primer", url: "https://github.com/donnemartin/system-design-primer" },
@@ -87,7 +77,6 @@ export default function ResourcesPage() {
           title: "Aptitude & Reasoning",
           description: "Practice quantitative and logical reasoning skills",
           icon: <PenTool className="w-8 h-8 text-indigo-600" />,
-          imageUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
           links: [
             { name: "IndiaBix", url: "https://www.indiabix.com/" },
             { name: "Freshersworld Aptitude", url: "https://www.freshersworld.com/aptitude-questions" },
@@ -98,7 +87,6 @@ export default function ResourcesPage() {
           title: "Competitive Exam Prep",
           description: "Resources for competitive and placement exams",
           icon: <Award className="w-8 h-8 text-indigo-600" />,
-          imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
           links: [
             { name: "GATE Overflow", url: "https://gateoverflow.in/" },
             { name: "Career Power", url: "https://careerpower.in/" },
@@ -114,7 +102,6 @@ export default function ResourcesPage() {
           title: "Interview Guides",
           description: "Comprehensive interview preparation resources",
           icon: <Book className="w-8 h-8 text-indigo-600" />,
-          imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
           links: [
             { name: "Insider Tips", url: "https://www.ambitionbox.com/" },
             { name: "InterviewStreet", url: "https://www.interviewstreet.com/" },
@@ -125,7 +112,6 @@ export default function ResourcesPage() {
           title: "Global Learning Platforms",
           description: "Online courses and learning resources",
           icon: <Globe className="w-8 h-8 text-indigo-600" />,
-          imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
           links: [
             { name: "Coursera", url: "https://www.coursera.org/" },
             { name: "edX", url: "https://www.edx.org/" },
@@ -190,36 +176,25 @@ export default function ResourcesPage() {
                 title: "Resume Building",
                 description: "Create a standout professional resume",
                 icon: <Book className="w-12 h-12 text-indigo-600 mx-auto mb-4" />,
-                url: "https://www.canva.com/resumes/templates/",
-                imageUrl: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                url: "https://www.canva.com/resumes/templates/"
               },
               {
                 title: "Mock Interviews",
                 description: "Practice with AI-powered interview simulations",
                 icon: <Target className="w-12 h-12 text-green-600 mx-auto mb-4" />,
-                url: "/dashboard",
-                imageUrl: "https://images.unsplash.com/photo-1555421689-d68471e189f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                url: "/dashboard"
               },
               {
                 title: "Skill Assessment",
                 description: "Identify and improve your key skills",
                 icon: <Brain className="w-12 h-12 text-purple-600 mx-auto mb-4" />,
-                url: "https://www.alooba.com/alooba-world/",
-                imageUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                url: "https://www.skillvalue.com/"
               }
             ].map((tip, index) => (
               <div 
                 key={index} 
-                className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-all group relative overflow-hidden"
+                className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-all group"
               >
-                <div className="relative h-40 mb-6 rounded-lg overflow-hidden">
-                  <img
-                    src={tip.imageUrl}
-                    alt={tip.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                </div>
                 {tip.icon}
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   {tip.title}
@@ -227,10 +202,12 @@ export default function ResourcesPage() {
                 <p className="text-gray-600 mb-4">{tip.description}</p>
                 <a
                   href={tip.url}
-                  className="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group-hover:text-indigo-800 text-indigo-600 flex items-center justify-center"
                 >
-                  Learn more
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  Explore
+                  <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </div>
             ))}
